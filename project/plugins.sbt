@@ -6,4 +6,4 @@ addSbtPlugin("com.typesafe.sbt"          % "sbt-digest"                % "1.1.4"
 addSbtPlugin("com.vmunier"               % "sbt-web-scalajs"           % "1.1.0")
 addSbtPlugin("org.scala-js"              % "sbt-scalajs"               % "1.5.0")
 
-libraryDependencies += "org.vafer" % "jdeb" % "1.8" artifacts (Artifact("jdeb", "jar", "jar"))
+libraryDependencies += "org.vafer" % "jdeb" % "1.8" artifacts Artifact("jdeb", "jar", "jar")
