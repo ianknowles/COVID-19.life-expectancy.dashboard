@@ -21,11 +21,11 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 	 * will be called when the application receives a `GET` request with
 	 * a path of `/`.
 	 */
-	def index(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+	def index: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		Ok(views.html.index(SharedMessages.itWorks))
 	}
 
-	def dash(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+	def dash: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		//TODO should use the directory listing to filter for files present
 		Environment.simple().getFile("public/data").listFiles()
 
@@ -36,20 +36,20 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 		Ok(views.html.dashboard(files.toList))
 	}
 
-	def about(): Action[AnyContent] = TODO
+	def about: Action[AnyContent] = TODO
 
-	def donut(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+	def donut: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		val files: Seq[FileOption] = config.get[Seq[FileOption]]("graph_files")
 		Ok(views.html.donut(files.toList))
 	}
 
-	def project(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+	def project: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		Ok(views.html.project())
 	}
 
-	def team(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+	def team: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		Ok(views.html.team(Team.people))
 	}
 
-	def privacy(): Action[AnyContent] = TODO
+	def privacy: Action[AnyContent] = TODO
 }

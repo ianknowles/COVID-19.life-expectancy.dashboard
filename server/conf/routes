@@ -13,7 +13,7 @@ GET     /team                       graphs.controllers.HomeController.team
 GET     /privacy                    graphs.controllers.HomeController.privacy
 
 GET     /addPerson                  graphs.controllers.PersonController.index
-POST    /person                     graphs.controllers.PersonController.addPerson
+POST    /person                     graphs.controllers.PersonController.addPerson()
 GET     /persons                    graphs.controllers.PersonController.getPersons
 GET     /people                     graphs.controllers.PersonController.viewPersons
 
