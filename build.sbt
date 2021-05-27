@@ -20,19 +20,21 @@ lazy val server = (project in file("server"))
 			"com.vmunier" %% "scalajs-scripts" % "1.1.4",
 			guice,
 			specs2 % Test,
-			"org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test,
+			"org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test,
 			"org.webjars" %% "webjars-play" % "2.8.0",
-			"org.webjars" % "bootstrap" % "4.4.1",
-			"org.webjars" % "d3js" % "5.9.7",
+			//"org.webjars" % "bootstrap" % "5.0.0",
+			"org.webjars" % "bootstrap" % "4.6.0",
+			"org.webjars.npm" % "bootstrap-icons" % "1.4.1",
+			"org.webjars" % "d3js" % "6.6.0",
 			"org.webjars.npm" % "topojson" % "3.0.2",
-			"org.webjars" % "jquery" % "3.4.1",
-			"org.webjars" % "popper.js" % "1.15.0",
+			"org.webjars" % "jquery" % "3.6.0",
+			"org.webjars" % "popper.js" % "2.9.2",
 			"org.webjars" % "c3" % "0.6.6",
-			"org.webjars.npm" % "feather-icons" % "4.24.1",
-			"com.typesafe.play" %% "play-slick" % "4.0.2",
-			"com.typesafe.play" %% "play-slick-evolutions" % "4.0.2",
-			"com.h2database" % "h2" % "1.4.199",
-),
+			"org.webjars.npm" % "feather-icons" % "4.28.0",
+			"com.typesafe.play" %% "play-slick" % "5.0.0",
+			"com.typesafe.play" %% "play-slick-evolutions" % "5.0.0",
+			"com.h2database" % "h2" % "1.4.200",
+		),
 		maintainer in Linux := "Ian Knowles <ian@imknowles.co.uk>",
 		packageSummary in Linux := "Webserver for C Protect",
 		packageDescription := "Webserver for C Protect",
@@ -47,7 +49,7 @@ lazy val client = (project in file("client"))
 		scalaJSUseMainModuleInitializer := true,
 		mainClass in compile := Some("graphs.Main"),
 		libraryDependencies ++= Seq(
-			"org.scala-js" %%% "scalajs-dom" % "1.0.0"
+			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
 		),
 	)
 	.enablePlugins(ScalaJSPlugin, ScalaJSWeb)
@@ -59,7 +61,7 @@ lazy val clientGraphing = (project in file("clientGraphing"))
 		scalaJSUseMainModuleInitializer := true,
 		mainClass in compile := Some("graphs.Graphing"),
 		libraryDependencies ++= Seq(
-			"org.scala-js" %%% "scalajs-dom" % "1.0.0"
+			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
 		),
 	)
 	.enablePlugins(ScalaJSPlugin, ScalaJSWeb)
