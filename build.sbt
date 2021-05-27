@@ -50,7 +50,7 @@ lazy val client = (project in file("client"))
 		mainClass in compile := Some("graphs.Main"),
 		libraryDependencies ++= Seq(
 			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
-		),
+		)
 	)
 	.enablePlugins(ScalaJSPlugin, ScalaJSWeb)
 	.dependsOn(sharedJs)
@@ -62,7 +62,7 @@ lazy val clientGraphing = (project in file("clientGraphing"))
 		mainClass in compile := Some("graphs.Graphing"),
 		libraryDependencies ++= Seq(
 			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
-		),
+		)
 	)
 	.enablePlugins(ScalaJSPlugin, ScalaJSWeb)
 	.dependsOn(sharedJs)
