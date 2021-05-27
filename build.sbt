@@ -12,10 +12,10 @@ lazy val server = (project in file("server"))
 	.settings(commonSettings)
 	.settings(
 		scalaJSProjects := Seq(client, clientGraphing),
-		pipelineStages in Assets := Seq(scalaJSPipeline),
+		Assets / pipelineStages := Seq(scalaJSPipeline),
 		pipelineStages := Seq(digest, gzip),
 		// triggers scalaJSPipeline when using compile or continuous compilation
-		compile in Compile := ((compile in Compile) dependsOn scalaJSPipeline).value,
+		Compile / compile := ((Compile / compile) dependsOn scalaJSPipeline).value,
 		libraryDependencies ++= Seq(
 			"com.vmunier" %% "scalajs-scripts" % "1.1.4",
 			guice,
@@ -35,8 +35,8 @@ lazy val server = (project in file("server"))
 			"com.typesafe.play" %% "play-slick-evolutions" % "5.0.0",
 			"com.h2database" % "h2" % "1.4.200",
 		),
-		maintainer in Linux := "Ian Knowles <ian@imknowles.co.uk>",
-		packageSummary in Linux := "Webserver for C Protect",
+		Linux / maintainer := "Ian Knowles <ian@imknowles.co.uk>",
+		Linux / packageSummary := "Webserver for C Protect",
 		packageDescription := "Webserver for C Protect",
 		debianPackageDependencies := Seq("openjdk-11-jre-headless"),
 	)
@@ -47,7 +47,7 @@ lazy val client = (project in file("client"))
 	.settings(commonSettings)
 	.settings(
 		scalaJSUseMainModuleInitializer := true,
-		mainClass in compile := Some("graphs.Main"),
+		compile / mainClass := Some("graphs.Main"),
 		libraryDependencies ++= Seq(
 			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
 		)
@@ -59,7 +59,7 @@ lazy val clientGraphing = (project in file("clientGraphing"))
 	.settings(commonSettings)
 	.settings(
 		scalaJSUseMainModuleInitializer := true,
-		mainClass in compile := Some("graphs.Graphing"),
+		compile / mainClass := Some("graphs.Graphing"),
 		libraryDependencies ++= Seq(
 			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
 		)
