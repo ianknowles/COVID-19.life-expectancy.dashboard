@@ -54,7 +54,6 @@ lazy val server = (project in file("server"))
 lazy val client = (project in file("client"))
 	.settings(
 		scalaJSUseMainModuleInitializer := true,
-		compile / mainClass := Some("graphs.Main"),
 		libraryDependencies ++= Seq(
 			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
 		)
@@ -65,7 +64,6 @@ lazy val client = (project in file("client"))
 lazy val clientGraphing = (project in file("clientGraphing"))
 	.settings(
 		scalaJSUseMainModuleInitializer := true,
-		compile / mainClass := Some("graphs.Graphing"),
 		libraryDependencies ++= Seq(
 			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
 		)
