@@ -1,6 +1,15 @@
 name := "graphing-server-core"
 
-version := "1.0-SNAPSHOT"
+ThisBuild / organization := "uk.co.imknowles"
+ThisBuild / scalaVersion := "2.13.5"
+ThisBuild / version      := "1.0-SNAPSHOT"
+ThisBuild / scalacOptions ++= Seq(
+	"-feature",
+	"-deprecation",
+	"-Xfatal-warnings",
+	"-target:11"
+)
+ThisBuild / javacOptions ++= Seq("-source", "11", "-target", "11")
 
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "com.example.controllers._"
@@ -9,7 +18,6 @@ version := "1.0-SNAPSHOT"
 // play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"
 
 lazy val server = (project in file("server"))
-	.settings(commonSettings)
 	.settings(
 		scalaJSProjects := Seq(client, clientGraphing),
 		Assets / pipelineStages := Seq(scalaJSPipeline),
@@ -44,7 +52,6 @@ lazy val server = (project in file("server"))
 	.dependsOn(sharedJvm)
 
 lazy val client = (project in file("client"))
-	.settings(commonSettings)
 	.settings(
 		scalaJSUseMainModuleInitializer := true,
 		compile / mainClass := Some("graphs.Main"),
@@ -56,7 +63,6 @@ lazy val client = (project in file("client"))
 	.dependsOn(sharedJs)
 
 lazy val clientGraphing = (project in file("clientGraphing"))
-	.settings(commonSettings)
 	.settings(
 		scalaJSUseMainModuleInitializer := true,
 		compile / mainClass := Some("graphs.Graphing"),
@@ -70,21 +76,9 @@ lazy val clientGraphing = (project in file("clientGraphing"))
 lazy val shared = crossProject(JSPlatform, JVMPlatform)
 	.crossType(CrossType.Pure)
 	.in(file("shared"))
-	.settings(commonSettings)
+
 lazy val sharedJvm = shared.jvm
 lazy val sharedJs = shared.js
-
-lazy val commonSettings = Seq(
-	scalaVersion := "2.13.5",
-	organization := "com.imknowles",
-	scalacOptions ++= Seq(
-		"-feature",
-		"-deprecation",
-		"-Xfatal-warnings",
-		"-target:11"
-	),
-	javacOptions ++= Seq("-source", "11", "-target", "11")
-)
 
 // loads the server project at sbt startup
 onLoad in Global := (onLoad in Global).value.andThen(state => "project server" :: state)
