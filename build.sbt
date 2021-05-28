@@ -1,5 +1,3 @@
-name := "graphing-server-core"
-
 ThisBuild / organization := "uk.co.imknowles"
 ThisBuild / scalaVersion := "2.13.5"
 ThisBuild / version      := "1.0-SNAPSHOT"
@@ -19,6 +17,7 @@ ThisBuild / javacOptions ++= Seq("-source", "11", "-target", "11")
 
 lazy val server = (project in file("server"))
 	.settings(
+		name := "graphing-server-core",
 		scalaJSProjects := Seq(client, clientGraphing),
 		Assets / pipelineStages := Seq(scalaJSPipeline),
 		pipelineStages := Seq(digest, gzip),
