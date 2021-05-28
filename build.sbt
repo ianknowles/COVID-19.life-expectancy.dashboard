@@ -1,4 +1,4 @@
-name := """childhoodmaltreatment"""
+name := "graphing-server-core"
 
 version := "1.0-SNAPSHOT"
 
@@ -36,8 +36,8 @@ lazy val server = (project in file("server"))
 			"com.h2database" % "h2" % "1.4.200",
 		),
 		Linux / maintainer := "Ian Knowles <ian@imknowles.co.uk>",
-		Linux / packageSummary := "Webserver for C Protect",
-		packageDescription := "Webserver for C Protect",
+		Linux / packageSummary := s"Webserver for ${name.value}",
+		packageDescription := s"Webserver for ${name.value}",
 		debianPackageDependencies := Seq("openjdk-11-jre-headless"),
 	)
 	.enablePlugins(PlayScala, JDebPackaging)
