@@ -45,9 +45,15 @@ lazy val server = (project in file("server"))
 		Linux / maintainer := "Ian Knowles <ian@imknowles.co.uk>",
 		Linux / packageSummary := s"Webserver for ${name.value}",
 		packageDescription := s"Webserver for ${name.value}",
-		debianPackageDependencies := Seq("openjdk-11-jre-headless"),
+		Debian / debianPackageDependencies := Seq("openjdk-11-jre-headless"),
+		Debian / debianPackageRecommends += "nginx",
+		Universal / javaOptions ++= Seq(
+			s"-Dpidfile.path=/var/run/${packageName.value}/play.pid",
+			"-Dplay.evolutions.db.default.autoApply=true",
+			"-Dplay.http.secret.key=APPLICATION_SECRET"
+		),
 	)
-	.enablePlugins(PlayScala, JDebPackaging)
+	.enablePlugins(PlayScala, JDebPackaging, SystemdPlugin)
 	.dependsOn(sharedJvm)
 
 lazy val client = (project in file("client"))
