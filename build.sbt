@@ -78,4 +78,4 @@ lazy val sharedJvm = shared.jvm
 lazy val sharedJs = shared.js
 
 // loads the server project at sbt startup
-onLoad in Global := (onLoad in Global).value.andThen(state => "project server" :: state)
+Global / onLoad := (Global / onLoad).value.andThen(state => "project server" :: state)
