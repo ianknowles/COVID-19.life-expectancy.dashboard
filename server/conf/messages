@@ -1,11 +1,13 @@
 # https://www.playframework.com/documentation/latest/ScalaI18N
-site.title=Child Maltreatment in the UK
+site.title=site.title
 site.desc=site.desc
 project.name=project.name
+project.year=2021
+project.copyright=Ian Knowles
 
 index.title=Home
-index.jumbo.title=A data resource for measuring child maltreatment
-index.jumbo.desc=A collection of historic data on indicators of child maltreatment in England and Wales.
+index.jumbo.title=jumbo.title
+index.jumbo.desc=jumbo.desc
 
 team.title=Team
 team.desc=Meet the project members.
