@@ -53,5 +53,7 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 		Ok(views.html.team(Team.people))
 	}
 
-	def privacy: Action[AnyContent] = TODO
+	def privacy: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		Ok(views.html.privacy())
+	}
 }
