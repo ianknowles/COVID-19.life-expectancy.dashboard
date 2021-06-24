@@ -7,7 +7,7 @@ object Acknowledgements {
 		Acknowledgement(
 			href = "https://www.ox.ac.uk/",
 			alt = "University of Oxford logo",
-			image = Assets.versioned("images/oxweb-logo-rect.svg"),
+			image = Assets.versioned("images/logos/oxweb-logo-rect.svg"),
 			imageCSSClass = "oxford",
 		),
 	)
