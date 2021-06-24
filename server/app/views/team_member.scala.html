@@ -1,12 +1,24 @@
-@(person: TeamMember)
-<div id='@{person.name.replaceAll("\\s", "")}' class="card my-4 front-page-jumbo text-dark">
-	<div class="card-body">
-		<h1 class="card-title">@person.name</h1>
-		<p><img class="rounded float-right m-2" style='height: 100%; width: 25%; object-fit: cover' alt="@person.name" src="@person.imageurl"></p>
-		<p class="card-text">@person.desc</p>
-		<p>
-		@for(link <- person.links) {
-			<span data-feather="@link.icon"></span> <a class="card-link" href="@link.url" target="_blank" rel="noopener">@link.text</a>
-		}
-		</p></div>
+@(teamMember: TeamMember)
+<div id='@{teamMember.name.replaceAll("\\s", "")}' class="card my-4 front-page-jumbo text-dark text-grow">
+	<div class="row no-gutters">
+		<div class="col-md-4 ">
+			<img class="rounded h-100 w-100" style="object-fit: cover" alt="@teamMember.name" src="@teamMember.imageURL" />
+		</div>
+		<div class="col-md-8 d-flex flex-column justify-content-between">
+			<div class="card-body">
+				<h1 class="card-title">@teamMember.name</h1>
+				<h4 class="card-subtitle mb-2 text-muted">@teamMember.job</h4>
+				<p class="card-text d-block ">@teamMember.desc</p>
+			</div>
+			<div class="card-footer">
+				<ul class="list-group list-group-flush">
+				@for(link <- teamMember.links) {
+					<li class="list-group-item bg-transparent">
+						<svg class="bi mr-1" width="16" height="16" fill=""><use href='@routes.Assets.versioned("lib/bootstrap-icons/bootstrap-icons.svg")#@link.icon'/></svg><a class="card-link" href="@link.url" target="_blank" rel="noopener">@link.text</a>
+					</li>
+				}
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>

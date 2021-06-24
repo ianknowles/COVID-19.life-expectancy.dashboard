@@ -1,6 +1,8 @@
-@(people: List[TeamMember])(implicit webJarsUtil: org.webjars.play.WebJarsUtil, messages: Messages, request: Request[AnyContent])
+@(team: List[TeamMember])(implicit webJarsUtil: org.webjars.play.WebJarsUtil, messages: Messages, request: Request[AnyContent])
 @main(s"${messages("team.title")} - ${messages("site.title")}") {
-@for(person <- people) {
-@views.html.person(person)
+<div class="p-4">
+@for(teamMember <- team) {
+@views.html.team_member(teamMember)
 }
+</div>
 }{ }
