@@ -1,14 +1,10 @@
-@()(implicit messages: Messages)
 @import java.time.Year
-<footer class="bg-dark w-100 h-100">
-	<hr class="mt-0 bg-light">
-	<div class="d-flex flex-column flex-lg-row flex-wrap justify-content-center align-content-center">
-		<div class="align-self-center">
-			<a href="https://www.spi.ox.ac.uk" target="_blank" rel="noopener">
-				<img class="m-2 p-2 footer-logo footer-logo-oxford" alt="University of Oxford logo"
-					 src='@routes.Assets.versioned("images/oxweb-logo-rect.svg")'/>
-			</a>
-		</div>
+
+@()(implicit messages: Messages)
+<footer class="bg-light w-100 h-100">
+	<hr class="mt-0">
+	@components.navigation.acknowledgements(Acknowledgements.primary)
+	<div class="pb-2">
+		<span class="m-2">&copy; @messages("project.year")–@Year.now.getValue, @messages("project.copyright")</span>
 	</div>
-	<p class="p-2 mb-0 text-light">&copy; 2019–@Year.now.getValue, @messages("project.name")</p>
 </footer>
