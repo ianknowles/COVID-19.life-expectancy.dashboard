@@ -1,8 +1,8 @@
 @import java.time.Year
 
 @()(implicit messages: Messages)
-<footer class="bg-light w-100 h-100">
-	<hr class="mt-0">
+<footer class="bg-dark w-100 h-100">
+	<hr class="mt-0 bg-light">
 	@components.navigation.acknowledgements(Acknowledgements.primary)
 	<div class="pb-2">
 		<span class="m-2">&copy; @messages("project.year")–@Year.now.getValue, @messages("project.copyright")</span>
