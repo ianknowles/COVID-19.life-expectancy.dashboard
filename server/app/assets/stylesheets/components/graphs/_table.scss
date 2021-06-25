@@ -1,0 +1,115 @@
+/*.row-anchor:before {
+*  display: block;
+*  height: 48px; */  /* equal to the header height */
+/*  padding-top: 48px;
+*  margin-top: -48px;  /* negative margin equal to the header height */
+/*  visibility: hidden;
+  content: "";
+  position: relative;
+}*/
+.row-anchor::before {
+	/*display: inline-block;
+	content: " ";
+	padding-top: 96px;
+	margin-top: -96px;
+	height: 96px;
+	visibility: hidden;
+	pointer-events: none;*/
+}
+:target::before {
+
+}
+/*@media (min-width: 768px) {
+	.row-anchor::before {
+  display: block;
+  content: " ";
+  /*margin-top: -96px;*/
+/*position: relative;
+top: -96px;
+height: 96px;
+visibility: hidden;
+pointer-events: none;
+  }
+}*/
+
+@media
+only screen and (max-width: 1199.98px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr { border: 1px solid #ccc; }
+
+	td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		/* Now like a table header */
+		position: relative;
+		/* Top/left values mimic padding */
+		/*top: 6px;*/
+		left: 6px;
+		width: 45%;
+		height: 100%;
+		min-width: 165px;
+		padding-right: 8px;
+		//padding-top: 0.3rem;
+		//padding-bottom: 0.3rem;
+		margin-right: 16px;
+		white-space: nowrap;
+		text-align: right;
+		border-right: 1px solid #dee2e6;
+	}
+
+	/*
+	Label the data
+	*/
+	td:before {
+		content: attr(data-th);
+		font-weight: bold;
+		/*width: 6.5em;*/
+		display: inline-block;
+	}
+}
+
+.ascending::before, .descending::before, .header:before {
+	right: 1em;
+	/*content: "\2193";*/ /* down arrow */
+	/*content: "\25bc"; /* down triangle */
+	content: "\25b2";
+	float: right;
+}
+
+.ascending::after, .descending::after, .header:after {
+	right: 0.5em;
+	/*content: "\2191";*/ /* up arrow */
+	/*content: "\25b2"; /* up triangle */
+	content: "\25bc";
+	float: right;
+}
+
+.header:before, .header:after, .ascending::after, .descending::before {
+	/*position: absolute;*/
+	/*bottom: 0.9em;*/
+	/*display: block;*/
+	opacity: 0.3;
+}
+
+.header, .ascending, .descending {
+	cursor: pointer;
+}
