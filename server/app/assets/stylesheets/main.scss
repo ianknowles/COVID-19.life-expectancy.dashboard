@@ -1,12 +1,5 @@
 @import "lib/bootstrap/scss/bootstrap";
-
-.footer-logo {
-  height: 86px;
-}
-
-.footer-logo-oxford {
-  background-color: #002147;
-}
+@import "components/navigation/acknowledgements";
 
 .top-0 {
   top: 0px;
