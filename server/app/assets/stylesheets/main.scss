@@ -169,26 +169,6 @@ span[data-feather] {
 		}
 	}
 
-input[type="color" i] {
-	background-color: #e9ecef ! important;
-	border: 1px solid #ced4da ! important;
-	opacity:0 ! important;
-	position: absolute ! important;
-}
-
-.color-pick-size {
-	width: 38px ! important;
-	height: 38px ! important;
-}
-@media (min-width: 768px) {
-  .color-pick-size {
-    width: 76px ! important;
-  }
-}
-.color-pick-right {
-	right: 0px ! important;
-}
-
 .background-color-sea {
 	background:LightCyan
 }
