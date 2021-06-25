@@ -7,11 +7,11 @@
 @import "index";
 
 .top-0 {
-  top: 0px;
+	top: 0px;
 }
 
 body {
-  font-size: .875rem;
+	font-size: .875rem;
 }
 
 /*
@@ -19,12 +19,12 @@ body {
 */
 
 [role="main"] {
-  padding-top: 126px; /* Space for fixed navbar */
+	padding-top: 126px; /* Space for fixed navbar */
 }
 @media (min-width: 768px) {
-  [role="main"] {
-    padding-top: 96px;
-  }
+	[role="main"] {
+		padding-top: 96px;
+	}
 }
 
 /*
