@@ -1,5 +1,6 @@
 @import "lib/bootstrap/scss/bootstrap";
 @import "components/shade";
+@import "components/graphs/figure";
 @import "components/navigation/acknowledgements";
 @import "components/navigation/nav_top";
 @import "index";
@@ -77,15 +78,6 @@ span[data-feather] {
 
 .border-top { border-top: 1px solid #e5e5e5; }
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
-
-.datamaps-legend {
-  position: static;
-}
-
-.datamaps-legend dl {
-  text-align: center;
-  display: inline-block;
-}
 
 .ascending::before, .descending::before, .header:before {
     right: 1em;
@@ -171,11 +163,6 @@ span[data-feather] {
 
 .background-color-sea {
 	background:LightCyan
-}
-
-/*TODO min height set to force the scrollbar, set the empty sizes more realistically*/
-figure.map-contain {
-	min-height: 39vw;
 }
 
 .border-right-2 {

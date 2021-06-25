@@ -1,0 +1,13 @@
+/*TODO min height set to force the scrollbar, set the empty sizes more realistically*/
+figure.map-contain {
+	min-height: 39vw;
+}
+
+.datamaps-legend {
+	position: static;
+}
+
+.datamaps-legend dl {
+	text-align: center;
+	display: inline-block;
+}
