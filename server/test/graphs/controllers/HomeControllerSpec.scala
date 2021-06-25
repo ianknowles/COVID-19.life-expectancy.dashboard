@@ -1,9 +1,12 @@
-package controllers
+package graphs.controllers
 
+import com.typesafe.config.ConfigFactory
 import org.scalatestplus.play._
 import org.scalatestplus.play.guice._
-import play.api.test._
+import org.webjars.play.WebJarsUtil
+import play.api.Configuration
 import play.api.test.Helpers._
+import play.api.test._
 
 /**
  * Add your spec here.
@@ -16,7 +19,8 @@ class HomeControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting
   "HomeController GET" should {
 
     "render the index page from a new instance of controller" in {
-      val controller = new HomeController(stubControllerComponents())
+			implicit val webJarsUtil: WebJarsUtil = app.injector.instanceOf[WebJarsUtil]
+      val controller = new HomeController(stubControllerComponents(), Configuration(ConfigFactory.load()))
       val home = controller.index().apply(FakeRequest(GET, "/"))
 
       status(home) mustBe OK
