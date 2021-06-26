@@ -3,12 +3,12 @@
 @main(s"${messages("dash.title")} - ${messages("site.title")}") {
 <div class="d-flex justify-content-between align-items-end flex-wrap pb-2 mb-3 border-bottom">
 	<div class="btn-toolbar mt-2 mb-0 mr-sm-2 flex-column flex-lg-row">
-		@time_series_picker("timeseries", files)
-		@time_series_controls("timeseries")
-		@data_controls("timeseries")
+		@components.controls.time_series_picker("timeseries", files)
+		@components.controls.time_series_controls("timeseries")
+		@components.controls.data_controls("timeseries")
 	</div>
 </div>
-@figure("timeseries")
+@components.graphs.figure("timeseries")
 }{
 @webJarsUtil.locate("d3.min.js").script()
 @webJarsUtil.locate("c3.min.js").script()
