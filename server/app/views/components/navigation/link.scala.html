@@ -1,0 +1,7 @@
+@(route: play.api.mvc.Call, icon: String, messageID: String, CSSClass: String)(implicit messages: Messages, request: Request[AnyContent])
+<a class='@{CSSClass} @{if (request.path == route.toString) { "active" }}'
+   href="@route">
+	<span data-feather="@icon"></span>
+	<span class="ml-1">@messages(messageID)</span>
+	<span class="sr-only">@{if (request.path == route.toString) { "(" + messages("nav.currentPageIndicator") + ")" }}</span>
+</a>

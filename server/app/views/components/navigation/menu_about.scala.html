@@ -2,9 +2,9 @@
 <li class='nav-item dropdown @{if (request.path == graphs.controllers.routes.HomeController.project.toString || request.path == graphs.controllers.routes.HomeController.team.toString || request.path == graphs.controllers.routes.HomeController.privacy.toString) { "active" }}'>
 	<a class="nav-link pl-1 dropdown-toggle" href="." id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span data-feather="info"></span><span class="ml-1">@messages("nav.about.title")</span></a>
 	<div class="dropdown-menu" aria-labelledby="dropdown02">
-		<a class='dropdown-item @{if (request.path == graphs.controllers.routes.HomeController.project.toString) { "active" }}' href="@graphs.controllers.routes.HomeController.project"><span data-feather="book-open"></span><span class="ml-1">@messages("project.title")</span><span class="sr-only">@{if (request.path == graphs.controllers.routes.HomeController.project.toString) { "(" + messages("nav.currentPageIndicator") + ")" }}</span></a>
-		<a class='dropdown-item @{if (request.path == graphs.controllers.routes.HomeController.team.toString) { "active" }}' href="@graphs.controllers.routes.HomeController.team"><span data-feather="users"></span><span class="ml-1">@messages("team.title")</span><span class="sr-only">@{if (request.path == graphs.controllers.routes.HomeController.team.toString) { "(" + messages("nav.currentPageIndicator") + ")" }}</span></a>
-		<a class="dropdown-item" href="mailto:???@@????Subject=???" target="_blank"><span data-feather="mail"></span><span class="ml-1">@messages("contact.title")</span></a>
-		<a class='dropdown-item @{if (request.path == graphs.controllers.routes.HomeController.privacy.toString) { "active" }}' href="@graphs.controllers.routes.HomeController.privacy"><span data-feather="briefcase"></span><span class="ml-1">@messages("privacy.title")</span><span class="sr-only">@{if (request.path == graphs.controllers.routes.HomeController.privacy.toString) { "(" + messages("nav.currentPageIndicator") + ")" }}</span></a>
+		@components.navigation.link(graphs.controllers.routes.HomeController.project, "book-open", "project.title", "dropdown-item")
+		@components.navigation.link(graphs.controllers.routes.HomeController.team, "users", "team.title", "dropdown-item")
+		@components.navigation.mailto("user@example.com?Subject=Hello", "contact.title", "dropdown-item")
+		@components.navigation.link(graphs.controllers.routes.HomeController.privacy, "briefcase", "privacy.title", "dropdown-item")
 	</div>
 </li>
