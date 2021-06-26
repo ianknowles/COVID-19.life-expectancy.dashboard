@@ -1,9 +1,12 @@
 @()(implicit messages: Messages, request: Request[AnyContent])
 <li class='nav-item dropdown @{if (request.path == graphs.controllers.routes.HomeController.project.toString || request.path == graphs.controllers.routes.HomeController.team.toString || request.path == graphs.controllers.routes.HomeController.privacy.toString) { "active" }}'>
-	<a class="nav-link pl-1 dropdown-toggle" href="." id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span data-feather="info"></span><span class="ml-1">@messages("nav.about.title")</span></a>
+	<a class="nav-link pl-1 dropdown-toggle" href="." id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		@components.bootstrap_icon("info-square-fill", "bi-16")
+		<span class="ml-1">@messages("nav.about.title")</span>
+	</a>
 	<div class="dropdown-menu" aria-labelledby="dropdown02">
-		@components.navigation.link(graphs.controllers.routes.HomeController.project, "book-open", "project.title", "dropdown-item")
-		@components.navigation.link(graphs.controllers.routes.HomeController.team, "users", "team.title", "dropdown-item")
+		@components.navigation.link(graphs.controllers.routes.HomeController.project, "book", "project.title", "dropdown-item")
+		@components.navigation.link(graphs.controllers.routes.HomeController.team, "people", "team.title", "dropdown-item")
 		@components.navigation.mailto("user@example.com?Subject=Hello", "contact.title", "dropdown-item")
 		@components.navigation.link(graphs.controllers.routes.HomeController.privacy, "briefcase", "privacy.title", "dropdown-item")
 	</div>

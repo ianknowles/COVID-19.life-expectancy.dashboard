@@ -1,5 +1,5 @@
 @(mailLink: String, messageID: String, CSSClass: String)(implicit messages: Messages)
 <a class="@CSSClass" href="mailto:@mailLink" target="_blank">
-	<span data-feather="mail"></span>
+	@components.bootstrap_icon("envelope", "bi-16")
 	<span class="ml-1">@messages(messageID)</span>
 </a>

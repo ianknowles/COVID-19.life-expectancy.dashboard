@@ -2,7 +2,8 @@
 <div class="input-group m-1">
 	<div class="input-group-prepend">
 		<label for="@elementID-select-date-from" class="input-group-text">
-			<span class="sr-only">@messages("controls.timespan.from")</span><span data-feather="calendar"></span>
+			<span class="sr-only">@messages("controls.timespan.from")</span>
+			@components.bootstrap_icon("calendar-range", "bi-16")
 		</label>
 	</div>
 	<select id="@elementID-select-date-from" class="custom-select btn-outline-secondary h-100" data-style="btn-primary">
@@ -12,12 +13,12 @@
 	</label>
 	<select id="@elementID-select-date-to" class="custom-select btn-outline-secondary h-100" data-style="btn-primary">
 	</select>
-
 </div>
 <div class="input-group m-1">
 	<div class="input-group-prepend">
 		<label for="@elementID-select-category" class="input-group-text">
-			<span class="sr-only">@messages("controls.graph.category")</span><span data-feather="filter"></span>
+			<span class="sr-only">@messages("controls.graph.category")</span>
+			@components.bootstrap_icon("filter", "bi-16")
 		</label>
 	</div>
 	<select id="@elementID-select-category" class="custom-select btn-outline-secondary h-100" data-style="btn-primary">

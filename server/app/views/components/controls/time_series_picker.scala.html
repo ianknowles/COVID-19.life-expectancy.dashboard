@@ -3,7 +3,8 @@
 <div class="input-group m-1">
 	<div class="input-group-prepend">
 		<label for=@selectID class="input-group-text">
-			<span class="sr-only">@messages("controls.reportpicker.label")</span><span data-feather="bar-chart-2"></span>
+			<span class="sr-only">@messages("controls.reportpicker.label")</span>
+			@components.bootstrap_icon("file-bar-graph", "bi-16")
 		</label>
 	</div>
 	<select id=@selectID class="custom-select btn-outline-secondary h-100" data-style="btn-primary">
