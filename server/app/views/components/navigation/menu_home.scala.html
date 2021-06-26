@@ -1,0 +1,4 @@
+@()(implicit messages: Messages, request: Request[AnyContent])
+<li class='nav-item @{if (request.path == graphs.controllers.routes.HomeController.index.toString) { "active" }}'>
+	<a class="nav-link pl-1" href="@graphs.controllers.routes.HomeController.index"><span data-feather="home"></span><span class="ml-1">@messages("index.title")</span><span class="sr-only">@{if (request.path == graphs.controllers.routes.HomeController.index.toString) { "(" + messages("nav.currentPageIndicator") + ")" }}</span></a>
+</li>
