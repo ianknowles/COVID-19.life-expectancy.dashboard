@@ -60,7 +60,8 @@ lazy val client = (project in file("client"))
 		scalaJSUseMainModuleInitializer := true,
 		libraryDependencies ++= Seq(
 			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
-		)
+		),
+		Universal / scalaJSStage := FullOptStage
 	)
 	.enablePlugins(ScalaJSPlugin, ScalaJSWeb)
 	.dependsOn(sharedJs)
@@ -70,7 +71,8 @@ lazy val clientGraphing = (project in file("clientGraphing"))
 		scalaJSUseMainModuleInitializer := true,
 		libraryDependencies ++= Seq(
 			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
-		)
+		),
+		Universal / scalaJSStage := FullOptStage
 	)
 	.enablePlugins(ScalaJSPlugin, ScalaJSWeb)
 	.dependsOn(sharedJs)
