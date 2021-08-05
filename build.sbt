@@ -1,5 +1,5 @@
 ThisBuild / organization := "uk.co.imknowles"
-ThisBuild / scalaVersion := "2.13.5"
+ThisBuild / scalaVersion := "2.13.6"
 ThisBuild / version      := "1.0-SNAPSHOT"
 ThisBuild / scalacOptions ++= Seq(
 	"-feature",
