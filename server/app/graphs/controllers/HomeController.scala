@@ -14,13 +14,6 @@ import graphs.shared.SharedMessages
 @Singleton
 class HomeController @Inject() (val controllerComponents: ControllerComponents, config: Configuration)(implicit webJarsUtil: org.webjars.play.WebJarsUtil) extends BaseController with I18nSupport {
 
-	/**
-	 * Create an Action to render an HTML page.
-	 *
-	 * The configuration in the `routes` file means that this method
-	 * will be called when the application receives a `GET` request with
-	 * a path of `/`.
-	 */
 	def index: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		Ok(views.html.index(SharedMessages.itWorks))
 	}
