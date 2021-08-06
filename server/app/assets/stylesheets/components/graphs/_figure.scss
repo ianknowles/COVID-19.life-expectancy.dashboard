@@ -11,3 +11,13 @@ figure.map-contain {
 	text-align: center;
 	display: inline-block;
 }
+
+.svgtext {
+	font-family: "Roboto Condensed",Georgia,Times New Roman,serif;
+}
+
+.figurecaption {
+	//@include p-2
+	//@include mb-0
+	@extend .svgtext
+}
