@@ -1,36 +1,3 @@
-/*.row-anchor:before {
-*  display: block;
-*  height: 48px; */  /* equal to the header height */
-/*  padding-top: 48px;
-*  margin-top: -48px;  /* negative margin equal to the header height */
-/*  visibility: hidden;
-  content: "";
-  position: relative;
-}*/
-.row-anchor::before {
-	/*display: inline-block;
-	content: " ";
-	padding-top: 96px;
-	margin-top: -96px;
-	height: 96px;
-	visibility: hidden;
-	pointer-events: none;*/
-}
-:target::before {
-
-}
-/*@media (min-width: 768px) {
-	.row-anchor::before {
-  display: block;
-  content: " ";
-  /*margin-top: -96px;*/
-/*position: relative;
-top: -96px;
-height: 96px;
-visibility: hidden;
-pointer-events: none;
-  }
-}*/
 
 @media
 only screen and (max-width: 1199.98px),
@@ -85,29 +52,6 @@ only screen and (max-width: 1199.98px),
 		/*width: 6.5em;*/
 		display: inline-block;
 	}
-}
-
-.ascending::before, .descending::before, .header:before {
-	right: 1em;
-	/*content: "\2193";*/ /* down arrow */
-	/*content: "\25bc"; /* down triangle */
-	content: "\25b2";
-	float: right;
-}
-
-.ascending::after, .descending::after, .header:after {
-	right: 0.5em;
-	/*content: "\2191";*/ /* up arrow */
-	/*content: "\25b2"; /* up triangle */
-	content: "\25bc";
-	float: right;
-}
-
-.header:before, .header:after, .ascending::after, .descending::before {
-	/*position: absolute;*/
-	/*bottom: 0.9em;*/
-	/*display: block;*/
-	opacity: 0.3;
 }
 
 .header, .ascending, .descending {
