@@ -19,7 +19,7 @@ ThisBuild / startYear := Some(2021)
 ThisBuild / description := "Web Application scaffold for visualisation dashboards and dataset collections"
 
 ThisBuild / scalaVersion := "2.13.6"
-ThisBuild / version      := "1.0.0"
+ThisBuild / version      := "1.0.0-SNAPSHOT"
 ThisBuild / versionScheme := Some("early-semver")
 ThisBuild / scalacOptions ++= Seq(
 	"-feature",
@@ -35,7 +35,7 @@ ThisBuild / javacOptions ++= Seq("-source", "11", "-target", "11")
 // Adds additional packages into conf/routes
 // play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"
 
-val projectName: String = "graphing-app-scaffold"
+val projectName: String = "COVID-19.life-expectancy.dashboard"
 lazy val root = (project in file("."))
 	.aggregate(server, client, shared.jvm, shared.js)
 	.settings(name := projectName)
@@ -44,7 +44,7 @@ val githubUser: String = "ianknowles"
 val githubRepo: String = projectName
 lazy val server = (project in file("server"))
 	.settings(
-		name := s"$projectName-server",
+		name := s"${projectName.split('.').dropRight(1).mkString(".")}-server",
 		scalaJSProjects := Seq(client, clientGraphing),
 		Assets / pipelineStages := Seq(scalaJSPipeline),
 		pipelineStages := Seq(digest, gzip),
