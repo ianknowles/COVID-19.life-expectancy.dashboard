@@ -4,6 +4,7 @@
 # ~~~~
 
 GET     /                           graphs.controllers.HomeController.lcdsredirect
+GET     /demrisk                    graphs.controllers.HomeController.demrisk
 GET     /lifeexpectancy/index       graphs.controllers.HomeController.index
 GET     /dash                       graphs.controllers.HomeController.dash
 GET     /donut                      graphs.controllers.HomeController.donut

@@ -22,6 +22,10 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 		TemporaryRedirect("https://www.demographicscience.ox.ac.uk/news/categories/covid-19")
 	}
 
+	def demrisk: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		Ok(views.html.demrisk())
+	}
+
 	def coming_soon: Action[AnyContent] = TODO
 
 	def dash: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
