@@ -1,24 +1,31 @@
 # https://www.playframework.com/documentation/latest/ScalaI18N
-site.title=site.title
-site.desc=site.desc
-project.name=project.name
+site.title=COVID-19 Mortality
+site.desc=Quantifying loss of life expectancy
+project.name=COVID-19 Mortality
 project.year=2021
-project.copyright=Ian Knowles
+project.copyright=LCDS
 
 index.title=Home
-index.jumbo.title=jumbo.title
-index.jumbo.desc=jumbo.desc
+index.jumbo.title=Using big data to measure global gender gaps in internet and mobile access
+index.jumbo.desc=Tracking progress on gender inequalities in internet and mobile access and use is more important than ever to ensure that women benefit from the digital revolution. Data on gender gaps in internet and mobile phone use and access are significantly lacking geographical coverage, comparability, and are slow to be updated. We show how big data can help close this gender data gap and measure progress towards this important development goal in real-time.
 
 team.title=Team
 team.desc=Meet the project members.
 
-dash.title=Time series
-dash.desc=View the data collection.
+dash.title=Latest indicators
+dash.desc=Check out the latest internet and mobile gender gap indicators.
+
+daily.title=Daily Report
+monthly.title=Monthly Report
+indicators.title=Indicators
+
+figure1.title=Life expectancy, years
+figure2.title=Difference in life expectancy, years
 
 donut.title=Donut
 
 project.title=Project
-project.desc=See the background of the project, and an overview of the data sources.
+project.desc=See the background of the project, and an overview of how the data is collected and processed.
 
 nav.data.title=Data
 nav.about.title=About
