@@ -1,0 +1,22 @@
+@(elementID: String)(implicit messages: Messages)
+<div id="@elementID-select-container" class="input-group mx-1 d-flex flex-nowrap">
+	<div class="input-group-prepend">
+		<label for="@elementID-select-age-0" class="input-group-text" title="Filter by age groups">
+			@{components.bootstrap_icon("filter", "bi-16 mr-1")}
+			<span class="">Ages</span>
+		</label>
+	</div>
+	<select id="@elementID-select-age-0" class="custom-select btn-outline-secondary h-100 w-auto" data-style="btn-primary" title="Age group 0">
+	</select>
+	<label for="@elementID-select-age-1">
+		<span class="sr-only">Filter by age groups</span>
+	</label>
+	<select id="@elementID-select-age-1" class="custom-select btn-outline-secondary h-100 w-auto" data-style="btn-primary" title="Age group 1">
+	</select>
+	<button id="@elementID-select-more" class="btn btn-light border d-flex align-items-center" type="button" data-toggle="tooltip" data-placement="top" title="Add age group">
+		@{components.bootstrap_icon("plus", "bi-16")}
+	</button>
+	<button id="@elementID-select-less" class="btn btn-light border d-flex align-items-center" type="button" data-toggle="tooltip" data-placement="top" title="Remove age group">
+		@{components.bootstrap_icon("dash", "bi-16")}
+	</button>
+</div>
