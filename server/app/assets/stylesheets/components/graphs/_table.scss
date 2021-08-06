@@ -35,8 +35,6 @@ only screen and (max-width: 1199.98px),
 		height: 100%;
 		min-width: 165px;
 		padding-right: 8px;
-		//padding-top: 0.3rem;
-		//padding-bottom: 0.3rem;
 		margin-right: 16px;
 		text-align: right;
 		border-right: 1px solid #dee2e6;
@@ -48,7 +46,6 @@ only screen and (max-width: 1199.98px),
 	td:before {
 		content: attr(data-th);
 		font-weight: bold;
-		/*width: 6.5em;*/
 		display: inline-block;
 	}
 }
