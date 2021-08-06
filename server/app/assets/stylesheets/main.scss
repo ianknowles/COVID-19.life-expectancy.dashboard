@@ -37,7 +37,9 @@ body {
 .background-color-sea {
 	background:LightCyan
 }
-
+.active {
+	background-color: rgba(0, 0, 0, 0.03);
+}
 .border-right-2 {
 	border-right-width: 2px;
 }
