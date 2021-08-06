@@ -35,7 +35,17 @@
 		</main>
 	</div>
 </div>
-
+@* TODO there are better ways to handle scala.js routing and twirl can supply routes if it renders more of the page *@
+@helper.javascriptRouter("jsRoutes")(routes.javascript.Assets.versioned)
+<script src='@routes.Assets.versioned("javascripts/versioned.js")' type="text/javascript"></script>
+<script type="text/javascript">
+(function() {
+	var oldVersioned = jsRoutes.controllers.Assets.versioned;
+	jsRoutes.controllers.Assets.versioned = function(path) {
+		return oldVersioned.apply(jsRoutes.controllers.Assets, [typeof versioned !== "undefined" && versioned[path] || path]);
+	};
+})();
+</script>
 @webJarsUtil.locate("jquery.slim.min.js").script()
 @webJarsUtil.locate("umd/popper.min.js").script()
 @webJarsUtil.locate("bootstrap.min.js").script()

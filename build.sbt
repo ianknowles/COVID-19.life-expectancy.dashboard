@@ -84,8 +84,13 @@ lazy val server = (project in file("server"))
 		publishTo := Some(s"GitHub $githubUser Apache Maven Packages" at s"https://maven.pkg.github.com/$githubUser/$githubRepo"),
 		publishMavenStyle := true,
 		credentials += Credentials(Path.userHome / ".sbt" / ".credentials"),
-		makeDeploymentSettings(Debian, Debian / packageBin, "deb")
+		makeDeploymentSettings(Debian, Debian / packageBin, "deb"),
 		//makeDeploymentSettings(Debian, Debian / genChanges, "changes")
+
+		// Create a map of versioned assets, replacing the empty versioned.js
+		DigestKeys.indexPath := Some("javascripts/versioned.js"),
+		// Assign the asset index to a global versioned var
+		DigestKeys.indexWriter ~= { writer => index => s"var versioned = ${writer(index)};" }
 	)
 	.enablePlugins(PlayScala, JDebPackaging, SystemdPlugin, DebianDeployPlugin)
 	.dependsOn(sharedJvm)
