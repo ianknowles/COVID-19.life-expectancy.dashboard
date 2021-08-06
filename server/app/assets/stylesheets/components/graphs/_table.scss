@@ -44,7 +44,7 @@ only screen and (max-width: 1199.98px),
 	Label the data
 	*/
 	td:before {
-		content: attr(data-th);
+		content: attr(data-label);
 		font-weight: bold;
 		display: inline-block;
 	}
