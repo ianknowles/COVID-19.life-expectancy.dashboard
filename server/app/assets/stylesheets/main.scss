@@ -1,5 +1,6 @@
 @import "lib/bootstrap/scss/bootstrap";
 @import "components/shade";
+@import "components/controls/accordion_button";
 @import "components/graphs/figure";
 @import "components/graphs/table";
 @import "components/navigation/acknowledgements";
@@ -47,4 +48,9 @@ body {
 .bi-16 {
 	height: 16px;
 	width: 16px;
+}
+
+.bi-36 {
+	height: 36px;
+	width: 36px;
 }

@@ -1,0 +1,8 @@
+@(dataTarget: String, expanded: Boolean, sectionDesc: String, ariaLabel: String)
+<!--<div class="btn-group btn-group-sm ml-5" role="group" aria-label="$ariaLabel">-->
+<div class="btn-group btn-group-sm ml-5" role="group">
+	<div class="btn btn-light border p-0 @if(!expanded) {collapsed}" type="button" data-toggle="collapse" data-target="#@dataTarget" aria-expanded="@expanded" aria-controls="@dataTarget"  title="show/hide @sectionDesc">
+		@{components.bootstrap_icon("chevron-up", "bi-36 collapse-icon", s"Hide $sectionDesc")}
+		@{components.bootstrap_icon("chevron-down", "bi-36 expand-icon", s"Show $sectionDesc")}
+	</div>
+</div>

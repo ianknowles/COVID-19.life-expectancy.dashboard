@@ -1,0 +1,17 @@
+.expand-icon {
+	vertical-align: text-bottom;
+	display: none;
+}
+
+.collapsed > .expand-icon {
+	display: initial;
+}
+
+.collapse-icon {
+	vertical-align: text-bottom;
+	display: initial;
+}
+
+.collapsed > .collapse-icon {
+	display: none;
+}
