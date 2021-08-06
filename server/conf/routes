@@ -3,13 +3,14 @@
 # https://www.playframework.com/documentation/latest/ScalaRouting
 # ~~~~
 
-GET     /                           graphs.controllers.HomeController.index
+GET     /                           graphs.controllers.HomeController.lcdsredirect
+GET     /lifeexpectancy/index       graphs.controllers.HomeController.index
 GET     /dash                       graphs.controllers.HomeController.dash
 GET     /donut                      graphs.controllers.HomeController.donut
-GET     /about                      graphs.controllers.HomeController.about
-GET     /project                    graphs.controllers.HomeController.project
-GET     /team                       graphs.controllers.HomeController.team
-GET     /privacy                    graphs.controllers.HomeController.privacy
+GET     /lifeexpectancy/about       graphs.controllers.HomeController.about
+GET     /lifeexpectancy/project     graphs.controllers.HomeController.project
+GET     /lifeexpectancy/team        graphs.controllers.HomeController.team
+GET     /lifeexpectancy/privacy     graphs.controllers.HomeController.privacy
 
 GET     /addPerson                  graphs.controllers.PersonController.index
 POST    /person                     graphs.controllers.PersonController.addPerson()

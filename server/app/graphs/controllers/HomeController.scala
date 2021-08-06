@@ -18,6 +18,10 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 		Ok(views.html.index(SharedMessages.itWorks))
 	}
 
+	def lcdsredirect: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		TemporaryRedirect("https://www.demographicscience.ox.ac.uk/news/categories/covid-19")
+	}
+
 	def coming_soon: Action[AnyContent] = TODO
 
 	def dash: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
