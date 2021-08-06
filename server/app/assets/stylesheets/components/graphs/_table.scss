@@ -57,3 +57,30 @@ only screen and (max-width: 1199.98px),
 .header, .ascending, .descending {
 	cursor: pointer;
 }
+
+// ascending values move down the page, so the sort icon indicates downwards while values ascend
+.active.ascending .indicator-sort-down {
+	display: block;
+	opacity: 1
+}
+
+.active.descending .indicator-sort-down {
+	display: none;
+	opacity: 0.25
+}
+
+.active.ascending .indicator-sort-up {
+	display: none;
+}
+
+.active.descending .indicator-sort-up {
+	display: block;
+}
+
+.indicator-sort-down {
+	opacity: 0.25
+}
+
+.indicator-sort-up {
+	display: none;
+}
