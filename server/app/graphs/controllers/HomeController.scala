@@ -57,4 +57,12 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 	def privacy: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		Ok(views.html.privacy())
 	}
+
+	def figure1: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		Ok(views.html.lifeexpectancy("Figure-1", "Life expectancy at selected ages, by country and sex, in 2015, 2019, and 2020. Ranked by female life expectancy in 2019 at age 0. *Estimates for Chile, Germany, and Greece were available from 2016.", "Life expectancy, years"))
+	}
+
+	def figure2: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		Ok(views.html.lifeexpectancy("Figure-2", "Average per-year change in life expectancy at selected ages, by country and sex, from 2015 to 2019, and total change from 2019 to 2020. Ranked by change in male life expectancy in 2020 at age 0. *Estimates for Chile, Germany, and Greece were available from 2016.", "Difference in life expectancy, years"))
+	}
 }
