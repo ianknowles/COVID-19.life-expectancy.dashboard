@@ -1,4 +1,95 @@
 @()(implicit webJarsUtil: org.webjars.play.WebJarsUtil, messages: Messages, request: Request[AnyContent])
 @main(s"${messages("project.title")} - ${messages("site.title")}") {
-This is a template project designed to be modified with site specific changes, while sharing common features and improvements back to this core.
+<div class="p-4">
+	<h1 id="about">About</h1>
+	<p>
+		The Covid-19 Mortality dashboard is a collaborative effort by researchers at the
+		<a href="https://www.demographicscience.ox.ac.uk/">Leverhulme Centre for Demographic Science</a> at the
+		University of Oxford and the <a href="https://www.sdu.dk/en/forskning/forskningsenheder/samf/cpop">
+		Interdisciplinary Centre on Population Dynamics</a> at the University of Southern Denmark. The dashboard
+		visualizes the main findings from the academic paper entitled
+		<a href="https://www.medrxiv.org/content/10.1101/2021.03.02.21252772v3.full">&#39;Quantifying impacts of the
+			COVID-19 pandemic through life expectancy losses&#39;</a>. The visualizations show period life expectancy levels in
+		2020 for 29 countries, covering Europe, the US and Chile, for which high quality age- and sex-disaggregated data
+		on all-cause mortality for all of 2020 had been released by June 2021. To contextualize the magnitudes of life
+		expectancy changes observed during the pandemic in 2020, we also provide estimates of recent levels and trends
+		in life expectancy in these countries for 2015 and 2019. Code for both the dashboard and the accompanying
+		academic article can be found <a href="https://github.com/OxfordDemSci">here</a>. Programming for the dashboard
+		was undertaken by <a href="https://github.com/ianknowles">Ian Knowles</a>, with input from
+		<a href="https://www.sociology.ox.ac.uk/people/ridhi-kashyap/">Ridhi Kashyap</a>,
+		<a href="https://www.sociology.ox.ac.uk/people/charles-rahal/">Charles Rahal</a>,
+		<a href="https://www.sociology.ox.ac.uk/people/jose-manuel-aburto/">José Manuel Aburto</a>,
+		<a href="https://portal.findresearcher.sdu.dk/en/persons/jschoeley">Jonas Schöley</a>,
+		<a href="https://www.sdu.dk/en/forskning/forskningsenheder/samf/cpop/about_the_centre/our_people/cpop_dem/ilya_kashnitsky">
+			Ilya Kashnitsky</a>,
+		<a href="https://www.stx.ox.ac.uk/people/luyin-zhang">Luyin Zhang</a>,
+		<a href="https://www.sdu.dk/en/forskning/forskningsenheder/samf/cpop/about_the_centre/our_people/cpop_dem/trifon_i_missov">
+			Trifon Missov</a>,
+		<a href="https://www.sociology.ox.ac.uk/people/jennifer-dowd/">Jennifer Dowd</a>, and
+		<a href="https://www.sociology.ox.ac.uk/people/melinda-mills/">Melinda Mills</a>. Be sure to follow the
+		<a href="https://twitter.com/OxfordDemSci">LCDS</a> and <a href="https://twitter.com/CPop_SDU">CPop</a> on
+		Twitter for all of the latest research updates.
+	</p>
+	<h1 id="indicators">Indicators</h1>
+	<p>
+		Our study calculates and reports period life expectancy levels to highlight the impacts of the pandemic on
+		population health through the use of this indicator. We report life expectancy at birth (age 0) and at other
+		ages (0, 10, 20, etc), as well as changes in period life expectancy observed between 2015, 2019 and 2020.
+		<a href="https://ourworldindata.org/life-expectancy-how-is-it-calculated-and-how-should-it-be-interpreted">
+			Life expectancy</a> at birth is the most widely-used metric of population health and longevity. The most
+		commonly-reported version of life expectancy is <i><em>period</em> life expectancy</i>, which is also what we
+		report.
+	</p>
+	<p>
+		<mark><dfn id="ple">Period life expectancy</dfn></mark> refers to the average number of years a hypothetical
+		cohort of newborns would live if they were to experience the death rates observed in a given period throughout
+		their lifespan. This indicator is thus often referred to as <i>period life expectancy</i>, as it simulates and
+		summarizes the implications of a set of mortality rates observed in a given period, such as a calendar year. The
+		<i>period life expectancy</i> indicator does not describe how long on average an actual <i>cohort</i> – i.e. a
+		group of people actually born in a year – would live, although that metric does exist, and is called a
+		<i><em>cohort</em> life expectancy</i>. However, waiting until every member of a cohort dies in order to
+		calculate <i>cohort life expectancy</i> would require us to wait a long time. To enable more timely measurements
+		of current conditions, <i>period life expectancy</i> is thus calculated and reported. <i>Period life expectancy
+	</i> should not however be interpreted as a projection or forecast of any individual’s lifespan.
+	</p>
+	<p>
+		The key advantage of period life expectancy is that it is the preferred indicator for comparisons over time and
+		across countries with populations of different sizes and age structures. Life expectancy in this form can also
+		be calculated as conditional on surviving to a given age (e.g. 60, as defaulted to on the landing page for this
+		dashboard), where it refers to <em>remaining</em> life expectancy from age 60. The study of life expectancy in
+		the context of the COVID-19 pandemic matters because it enables us to compare the cumulative impacts of the
+		pandemic against recent trends across different countries using a standardized indicator that is routinely
+		monitored to capture differences in mortality.
+	</p>
+	<h1 id="data">Data</h1>
+	<p>
+		Our life expectancy calculations rely on data from different sources. All-cause death counts were retrieved from
+		the <a href="https://doi.org/10.1371/journal.pone.0246663">Short Term Mortality Fluctuations</a> data series
+		within the <a href="https://www.mortality.org/">Human Mortality Database</a>. Additional all-cause mortality
+		data were retrieved for the USA from the <a href="https://www.cdc.gov/">CDC</a> and for England & Wales from the
+		<a href="https://www.ons.gov.uk/">ONS</a> to supplement the <strong>Short Term Mortality Fluctuations</strong>
+		data. The <strong>Short Term Mortality Fluctuations</strong> provides high-quality weekly death counts for 38
+		countries (June 2021) in both a harmonized and original format, but the completeness of these data varies by
+		country. We processed the original input files and selected countries for further analysis. Countries with weeks
+		missing from the 2020 death tabulation or with coarse age grouping schemes were dropped from the analysis. Death
+		counts for the USA and England & Wales across the years 2015 to 2019 were only reported in extremely coarse age
+		groups by the STMF, but were available in fine grouping for 2020. For both countries we therefore utilized
+		age-specific annual death counts as reported by the CDC and the ONS for the years prior to 2020.
+	</p>
+	<h1 id="funding">Funding</h1>
+	<p>
+		Funding is gratefully acknowledged from the British Academy’s Newton International Fellowship
+		(NIFBA19/190679), a Rockwool Foundation’s Excess Deaths grant, a Leverhulme Trust Large Centre Grant,
+		Nuffield College, a John Fell Fund grant (0009182), and a European Research Council grant (835079).
+	</p>
+	<h1 id="contact">Contact</h1>
+	<p>
+		For press inquiries related to the paper, the visualizations and findings, contact
+		<a href="mailto:emma.fabian@@sociology.ox.ac.uk?Subject=COVID-19%20mortality%20Project%20Press%20Inquiry"
+		target="_blank" rel="noopener">Emma Fabian</a>. For research-related inquiries, contact
+		<a href="https://www.sociology.ox.ac.uk/people/jose-manuel-aburto/">José Manuel Aburto</a>,
+		<a href="https://portal.findresearcher.sdu.dk/en/persons/jschoeley">Jonas Schöley</a>, and
+		<a href="https://www.sociology.ox.ac.uk/people/ridhi-kashyap/">Ridhi Kashyap</a>.
+	</p>
+</div>
 }{ }
