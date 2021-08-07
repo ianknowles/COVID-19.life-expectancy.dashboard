@@ -15,6 +15,10 @@ ThisBuild / javacOptions ++= Seq("-source", "11", "-target", "11")
 // Adds additional packages into conf/routes
 // play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"
 
+lazy val root = (project in file("."))
+	.aggregate(server, client, shared.jvm, shared.js)
+	.settings(name := "graphing-server-core")
+
 lazy val server = (project in file("server"))
 	.settings(
 		name := "graphing-server-core",
