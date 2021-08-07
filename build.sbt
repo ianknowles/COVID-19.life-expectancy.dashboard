@@ -15,8 +15,9 @@ import com.typesafe.sbt.packager.SettingsHelper.makeDeploymentSettings
 
 ThisBuild / organization := "uk.co.imknowles"
 
+ThisBuild / homepage := Some(url("https://covid19.demographicscience.ox.ac.uk/lifeexpectancy"))
 ThisBuild / startYear := Some(2021)
-ThisBuild / description := "Web Application scaffold for visualisation dashboards and dataset collections"
+ThisBuild / description := "Web Application for the LCDS COVID-19 Life Expectancy Dashboard"
 
 ThisBuild / scalaVersion := "2.13.6"
 ThisBuild / version      := "1.0.0-SNAPSHOT"
