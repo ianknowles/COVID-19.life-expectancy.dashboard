@@ -32,7 +32,7 @@ lazy val server = (project in file("server"))
 			guice,
 			specs2 % Test,
 			"org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test,
-			"org.webjars" %% "webjars-play" % "2.8.0",
+			"org.webjars" %% "webjars-play" % "2.8.8",
 			//"org.webjars" % "bootstrap" % "5.0.0",
 			"org.webjars" % "bootstrap" % "4.6.0",
 			"org.webjars.npm" % "bootstrap-icons" % "1.4.1",
