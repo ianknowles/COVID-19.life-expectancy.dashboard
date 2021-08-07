@@ -7,8 +7,6 @@ GET     /                           graphs.controllers.HomeController.lcdsredire
 GET     /demrisk                    graphs.controllers.HomeController.demrisk
 GET     /lifeexpectancy             graphs.controllers.HomeController.figure1
 GET     /lifeexpectancy/index       graphs.controllers.HomeController.index
-GET     /dash                       graphs.controllers.HomeController.dash
-GET     /donut                      graphs.controllers.HomeController.donut
 GET     /lifeexpectancy/figure1     graphs.controllers.HomeController.figure1
 GET     /lifeexpectancy/figure2     graphs.controllers.HomeController.figure2
 GET     /lifeexpectancy/about       graphs.controllers.HomeController.about
