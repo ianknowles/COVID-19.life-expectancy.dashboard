@@ -39,7 +39,7 @@ lazy val server = (project in file("server"))
 			"org.webjars" % "c3" % "0.6.6",
 			"com.typesafe.play" %% "play-slick" % "5.0.0",
 			"com.typesafe.play" %% "play-slick-evolutions" % "5.0.0",
-			"com.h2database" % "h2" % "1.4.200",
+			"com.h2database" % "h2" % "1.4.200"
 		),
 		Linux / maintainer := "Ian Knowles <ian@imknowles.co.uk>",
 		Linux / packageSummary := s"Webserver for ${name.value}",
@@ -50,7 +50,7 @@ lazy val server = (project in file("server"))
 			s"-Dpidfile.path=/var/run/${packageName.value}/play.pid",
 			"-Dplay.evolutions.db.default.autoApply=true",
 			"-Dplay.http.secret.key=APPLICATION_SECRET"
-		),
+		)
 	)
 	.enablePlugins(PlayScala, JDebPackaging, SystemdPlugin)
 	.dependsOn(sharedJvm)
@@ -59,7 +59,7 @@ lazy val client = (project in file("client"))
 	.settings(
 		scalaJSUseMainModuleInitializer := true,
 		libraryDependencies ++= Seq(
-			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
+			"org.scala-js" %%% "scalajs-dom" % "1.1.0"
 		),
 		Universal / scalaJSStage := FullOptStage
 	)
@@ -70,7 +70,7 @@ lazy val clientGraphing = (project in file("clientGraphing"))
 	.settings(
 		scalaJSUseMainModuleInitializer := true,
 		libraryDependencies ++= Seq(
-			"org.scala-js" %%% "scalajs-dom" % "1.1.0",
+			"org.scala-js" %%% "scalajs-dom" % "1.1.0"
 		),
 		Universal / scalaJSStage := FullOptStage
 	)
