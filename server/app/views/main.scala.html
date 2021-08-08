@@ -4,12 +4,30 @@
 * two arguments, a `String` for the title of the page and an `Html`
 * object to insert into the body of the page.
 *@
+@import java.net.URL
 @(title: String)(content: Html)(scripts: Html = Html(""))(implicit webJarsUtil: org.webjars.play.WebJarsUtil, messages: Messages, request: Request[AnyContent])
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	@* TODO metadata sections *@
 	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="@messages("site.desc")" />
+	<meta name="author" content="LCDS">
+	<meta name="keywords" content="COVID-19, life expectancy, excess mortality, data science, sociology, research">
+
+	<meta property="og:title" content="@title.split('-').head.trim" />
+	<meta property="og:description" content="@messages("site.desc")" />
+	<meta property="og:site_name" content="@messages("site.title")" />
+	<meta property="og:type" content="website" />
+	@* TODO solve this properly *@
+	<meta property="og:url" content="@{new URL(if (request.secure) "https" else "http", request.domain, if (request.host.split(':').length == 2) request.host.split(':').last.toInt else -1, request.uri).toString}" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:image" content="@routes.Assets.versioned("images/socialpreview.png")" />
+
+	<meta name="twitter:card" content="summary_large_image">
+
 	<title>@title</title>
 	<link rel="shortcut icon" type="image/png" href='@routes.Assets.versioned("images/favicon.png")'>
 
