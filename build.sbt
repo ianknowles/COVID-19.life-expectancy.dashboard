@@ -1,3 +1,5 @@
+import com.typesafe.sbt.packager.SettingsHelper.makeDeploymentSettings
+
 /**build definition file
  *
  * JDK version must be 11 - 15.
@@ -14,6 +16,7 @@
 ThisBuild / organization := "uk.co.imknowles"
 ThisBuild / scalaVersion := "2.13.6"
 ThisBuild / version      := "1.0-SNAPSHOT"
+ThisBuild / versionScheme := Some("early-semver")
 ThisBuild / scalacOptions ++= Seq(
 	"-feature",
 	"-deprecation",
@@ -32,6 +35,8 @@ lazy val root = (project in file("."))
 	.aggregate(server, client, shared.jvm, shared.js)
 	.settings(name := "graphing-server-core")
 
+val githubUser: String = "ianknowles"
+val githubRepo: String = "graphing-server-core"
 lazy val server = (project in file("server"))
 	.settings(
 		name := "graphing-server-core",
@@ -67,9 +72,16 @@ lazy val server = (project in file("server"))
 			s"-Dpidfile.path=/var/run/${packageName.value}/play.pid",
 			"-Dplay.evolutions.db.default.autoApply=true",
 			"-Dplay.http.secret.key=APPLICATION_SECRET"
-		)
+		),
+
+		// publish to github packages
+		publishTo := Some(s"GitHub $githubUser Apache Maven Packages" at s"https://maven.pkg.github.com/$githubUser/$githubRepo"),
+		publishMavenStyle := true,
+		credentials += Credentials(Path.userHome / ".sbt" / ".credentials"),
+		makeDeploymentSettings(Debian, Debian / packageBin, "deb")
+		//makeDeploymentSettings(Debian, Debian / genChanges, "changes")
 	)
-	.enablePlugins(PlayScala, JDebPackaging, SystemdPlugin)
+	.enablePlugins(PlayScala, JDebPackaging, SystemdPlugin, DebianDeployPlugin)
 	.dependsOn(sharedJvm)
 
 lazy val client = (project in file("client"))
