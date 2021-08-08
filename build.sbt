@@ -71,6 +71,7 @@ lazy val server = (project in file("server"))
 		Linux / maintainer := "Ian Knowles <ian@imknowles.co.uk>",
 		Linux / packageSummary := description.value,
 		Linux / packageDescription := description.value,
+		Debian / name := s"${name.value}-debian",
 		Debian / debianPackageDependencies := Seq("openjdk-11-jre-headless"),
 		Debian / debianPackageRecommends += "nginx",
 		Universal / javaOptions ++= Seq(
