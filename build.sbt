@@ -35,15 +35,16 @@ ThisBuild / javacOptions ++= Seq("-source", "11", "-target", "11")
 // Adds additional packages into conf/routes
 // play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"
 
+val projectName: String = "graphing-app-scaffold"
 lazy val root = (project in file("."))
 	.aggregate(server, client, shared.jvm, shared.js)
-	.settings(name := "graphing-server-core")
+	.settings(name := projectName)
 
 val githubUser: String = "ianknowles"
-val githubRepo: String = "graphing-server-core"
+val githubRepo: String = projectName
 lazy val server = (project in file("server"))
 	.settings(
-		name := "graphing-server-core",
+		name := s"$projectName-server",
 		scalaJSProjects := Seq(client, clientGraphing),
 		Assets / pipelineStages := Seq(scalaJSPipeline),
 		pipelineStages := Seq(digest, gzip),

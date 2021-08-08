@@ -1,4 +1,4 @@
-# graphing-server-core
+# graphing-app-scaffold
 
 A Play Framework website for data visualisation.
 
