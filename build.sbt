@@ -19,7 +19,7 @@ ThisBuild / startYear := Some(2021)
 ThisBuild / description := "Web Application scaffold for visualisation dashboards and dataset collections"
 
 ThisBuild / scalaVersion := "2.13.6"
-ThisBuild / version      := "1.0.0"
+ThisBuild / version      := "1.0.1-SNAPSHOT"
 ThisBuild / versionScheme := Some("early-semver")
 ThisBuild / scalacOptions ++= Seq(
 	"-feature",
