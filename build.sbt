@@ -88,5 +88,7 @@ lazy val shared = crossProject(JSPlatform, JVMPlatform)
 lazy val sharedJvm = shared.jvm
 lazy val sharedJs = shared.js
 
+server / PlayKeys.devSettings += "play.server.http.port" -> "9001"
+
 // loads the server project at sbt startup
 Global / onLoad := (Global / onLoad).value.andThen(state => "project server" :: state)
