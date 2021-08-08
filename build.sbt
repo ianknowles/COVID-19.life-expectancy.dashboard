@@ -14,6 +14,10 @@ import com.typesafe.sbt.packager.SettingsHelper.makeDeploymentSettings
  **/
 
 ThisBuild / organization := "uk.co.imknowles"
+
+ThisBuild / startYear := Some(2021)
+ThisBuild / description := "Web Application scaffold for visualisation dashboards and dataset collections"
+
 ThisBuild / scalaVersion := "2.13.6"
 ThisBuild / version      := "1.0-SNAPSHOT"
 ThisBuild / versionScheme := Some("early-semver")
@@ -64,8 +68,8 @@ lazy val server = (project in file("server"))
 			"com.h2database" % "h2" % "1.4.200"
 		),
 		Linux / maintainer := "Ian Knowles <ian@imknowles.co.uk>",
-		Linux / packageSummary := s"Webserver for ${name.value}",
-		packageDescription := s"Webserver for ${name.value}",
+		Linux / packageSummary := description.value,
+		Linux / packageDescription := description.value,
 		Debian / debianPackageDependencies := Seq("openjdk-11-jre-headless"),
 		Debian / debianPackageRecommends += "nginx",
 		Universal / javaOptions ++= Seq(
