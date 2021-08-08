@@ -1,3 +1,16 @@
+/**build definition file
+ *
+ * JDK version must be 11 - 15.
+ *
+ * Play requires Java 1.8 or later. As of Play 2.8.8 Java 16 is not yet supported.
+ * The build currently targets Java 11 as this is the current LTS version of Java and Play support for earlier versions
+ * is incomplete.
+ * Scala 3 and Java 17 (next LTS release) support is currently in development at Play.
+ *
+ * https://docs.scala-lang.org/overviews/jdk-compatibility/overview.html
+ * https://www.playframework.com/documentation/latest/Requirements
+ **/
+
 ThisBuild / organization := "uk.co.imknowles"
 ThisBuild / scalaVersion := "2.13.6"
 ThisBuild / version      := "1.0-SNAPSHOT"
