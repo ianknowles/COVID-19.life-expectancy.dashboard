@@ -1,6 +1,6 @@
 # graphing-server-core
 
-A Play! Framework website for data visualisation.
+A Play Framework website for data visualisation.
 
 The build supports Scala.js for frontend scripting, slick for database access, and scss compilation.
 

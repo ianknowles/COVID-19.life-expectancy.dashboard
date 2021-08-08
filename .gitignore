@@ -2,7 +2,7 @@ server/logs
 server/public/data
 
 ### PlayFramework template
-# Ignore Play! working directory #
+# Ignore Play working directory #
 bin/
 /db
 .eclipse
