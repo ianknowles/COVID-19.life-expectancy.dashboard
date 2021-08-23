@@ -1,3 +1,5 @@
+![Preview image of the main visualisation for COVID-19.life-expectancy.dashboard](server/public/images/socialpreview.png "COVID-19.life-expectancy.dashboard")
+
 # COVID-19.life-expectancy.dashboard
 
 A Play Framework website for data visualisation. Customized from https://github.com/ianknowles/graphing-server-core for https://www.medrxiv.org/content/10.1101/2021.03.02.21252772v3.full
