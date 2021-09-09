@@ -13,10 +13,14 @@ import com.typesafe.sbt.packager.SettingsHelper.makeDeploymentSettings
  * https://www.playframework.com/documentation/latest/Requirements
  **/
 
+val projectName: String = "graphing-app-scaffold"
 ThisBuild / organization := "uk.co.imknowles"
 
 ThisBuild / startYear := Some(2021)
 ThisBuild / description := "Web Application scaffold for visualisation dashboards and dataset collections"
+
+val githubUser: String = "ianknowles"
+val githubRepo: String = projectName
 
 ThisBuild / scalaVersion := "2.13.6"
 ThisBuild / version      := "1.0.1-SNAPSHOT"
@@ -35,13 +39,10 @@ ThisBuild / javacOptions ++= Seq("-source", "11", "-target", "11")
 // Adds additional packages into conf/routes
 // play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"
 
-val projectName: String = "graphing-app-scaffold"
 lazy val root = (project in file("."))
 	.aggregate(server, client, shared.jvm, shared.js)
 	.settings(name := projectName)
 
-val githubUser: String = "ianknowles"
-val githubRepo: String = projectName
 lazy val server = (project in file("server"))
 	.settings(
 		name := s"$projectName-server",
