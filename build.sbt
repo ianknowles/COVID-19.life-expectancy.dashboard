@@ -20,6 +20,10 @@ ThisBuild / homepage := Some(url("https://covid19.demographicscience.ox.ac.uk/li
 ThisBuild / startYear := Some(2021)
 ThisBuild / description := "Web Application for the LCDS COVID-19 Life Expectancy Dashboard"
 
+ThisBuild / organization := "uk.ac.ox.demographicscience"
+ThisBuild / organizationName := "Leverhulme Centre for Demographic Science"
+ThisBuild / organizationHomepage := Some(url("https://www.demographicscience.ox.ac.uk/"))
+
 val githubUser: String = "ianknowles"
 val githubRepo: String = projectName
 
