@@ -30,7 +30,7 @@ class PersonController @Inject()(repo: PersonRepository,
   /**
    * The index action.
    */
-  def index = Action { implicit request =>
+  def index: Action[AnyContent] = Action { implicit request =>
     Ok(views.html.addpeople(personForm))
   }
 
@@ -39,7 +39,7 @@ class PersonController @Inject()(repo: PersonRepository,
    *
    * This is asynchronous, since we're invoking the asynchronous methods on PersonRepository.
    */
-  def addPerson() = Action.async { implicit request =>
+  def addPerson(): Action[AnyContent] = Action.async { implicit request =>
     // Bind the form first, then fold the result, passing a function to handle errors, and a function to handle success.
     personForm.bindFromRequest().fold(
       // The error function. We return the index page with the error form, which will render the errors.
@@ -61,13 +61,13 @@ class PersonController @Inject()(repo: PersonRepository,
   /**
    * A REST endpoint that gets all the people as JSON.
    */
-  def viewPersons = Action.async { implicit request =>
+  def viewPersons: Action[AnyContent] = Action.async { implicit request =>
     repo.list().map { people =>
       Ok(views.html.people(people))
     }
   }
     
-  def getPersons = Action.async { implicit request =>
+  def getPersons: Action[AnyContent] = Action.async { implicit request =>
     repo.list().map { people =>
       Ok(Json.toJson(people))
     }
