@@ -20,7 +20,7 @@ ThisBuild / startYear := Some(2021)
 ThisBuild / description := "Web Application for the LCDS COVID-19 Life Expectancy Dashboard"
 
 ThisBuild / scalaVersion := "2.13.6"
-ThisBuild / version      := "1.0.0"
+ThisBuild / version      := "1.0.1-SNAPSHOT"
 ThisBuild / versionScheme := Some("early-semver")
 ThisBuild / scalacOptions ++= Seq(
 	"-feature",
