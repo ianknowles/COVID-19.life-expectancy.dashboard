@@ -13,11 +13,15 @@ import com.typesafe.sbt.packager.SettingsHelper.makeDeploymentSettings
  * https://www.playframework.com/documentation/latest/Requirements
  **/
 
+val projectName: String = "COVID-19.life-expectancy.dashboard"
 ThisBuild / organization := "uk.co.imknowles"
 
 ThisBuild / homepage := Some(url("https://covid19.demographicscience.ox.ac.uk/lifeexpectancy"))
 ThisBuild / startYear := Some(2021)
 ThisBuild / description := "Web Application for the LCDS COVID-19 Life Expectancy Dashboard"
+
+val githubUser: String = "ianknowles"
+val githubRepo: String = projectName
 
 ThisBuild / scalaVersion := "2.13.6"
 ThisBuild / version      := "1.0.1-SNAPSHOT"
@@ -36,13 +40,10 @@ ThisBuild / javacOptions ++= Seq("-source", "11", "-target", "11")
 // Adds additional packages into conf/routes
 // play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"
 
-val projectName: String = "COVID-19.life-expectancy.dashboard"
 lazy val root = (project in file("."))
 	.aggregate(server, client, shared.jvm, shared.js)
 	.settings(name := projectName)
 
-val githubUser: String = "ianknowles"
-val githubRepo: String = projectName
 lazy val server = (project in file("server"))
 	.settings(
 		name := s"${projectName.split('.').dropRight(1).mkString(".")}-server",
