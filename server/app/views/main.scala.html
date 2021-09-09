@@ -1,8 +1,5 @@
 @*
-* This template is called from the `index` template. This template
-* handles the rendering of the page header and body tags. It takes
-* two arguments, a `String` for the title of the page and an `Html`
-* object to insert into the body of the page.
+* Main page template that defines the common page structure, stylesheets and scripts.
 *@
 @(title: String)(content: Html)(scripts: Html = Html(""))(implicit webJarsUtil: org.webjars.play.WebJarsUtil, messages: Messages, request: Request[AnyContent])
 <!DOCTYPE html>
@@ -18,8 +15,6 @@
 </head>
 <body class="vh-100">
 @components.navigation.header()
-@* And here's where we render the `Html` object containing
-* the page content. *@
 @* TESTING removing the outer container has caused the footer to run over the content, this shouldnt happen *@
 <div class="container-fluid position-absolute top-0 h-100">
 	<div class="row h-100">
